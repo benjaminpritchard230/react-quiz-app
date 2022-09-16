@@ -16,33 +16,49 @@ const Quiz = () => {
     {
       questionText: "What is the capital of France?",
       answerOptions: [
-        { answerText: "London", isCorrect: false },
+        { answerText: "Washington", isCorrect: false },
         { answerText: "Paris", isCorrect: true },
-        { answerText: "Milan", isCorrect: false },
-        { answerText: "New York", isCorrect: false },
+        { answerText: "Manchester", isCorrect: false },
+        { answerText: "Lyon", isCorrect: false },
       ],
     },
   ]);
+  const numberOfQuestions = questionList.length;
 
-  //   const questionDisplay = () => {
-  //     let questionDisplayArray = [];
-  //     questionList.forEach((question, index) => {
-  //       questionDisplayArray.push(<Question question={question} key={index} />);
-  //     });
-  //     return questionDisplayArray;
-  //   };
+  // const questionDisplay = () => {
+  //   let questionDisplayArray = [];
+  //   questionList.forEach((question, index) => {
+  //     questionDisplayArray.push(<Question question={question} key={index} />);
+  //   });
+  //   return questionDisplayArray;
+  // };
 
-  const questionDisplay = (questionNumber) => {
-    return (
+  // const questionDisplay = (questionNumber) => {
+  //   return (
+  //     <div className="container">
+  //       <div className="row justify-content-center align-items-center">
+  //         <div className="col-12 d-flex justify-content-center">
+  //           <Question
+  //             question={questionList[questionNumber]}
+  //             questionNumber={questionNumber}
+  //             setQuestionNumber={setQuestionNumber}
+  //           />
+  //           {`Question ${questionNumber + 1} of ${numberOfQuestions}.`}
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+  return (
+    <div>
       <Question
         question={questionList[questionNumber]}
         questionNumber={questionNumber}
         setQuestionNumber={setQuestionNumber}
       />
-    );
-  };
-
-  return <div>{questionDisplay(questionNumber)}</div>;
+    </div>
+  );
 };
 
 export default Quiz;
